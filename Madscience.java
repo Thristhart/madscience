@@ -11,5 +11,11 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 public class Madscience {
     public static final String MODID = "madscience";
     public static final String VERSION = "0.1";
-
+    
+    @EventHandler
+    public void init(FMLInitializationEvent event)
+    {
+		// some example code
+        System.out.println("Hello World!");
+    }
 }

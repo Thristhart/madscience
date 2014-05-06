@@ -17,7 +17,7 @@ public class Madscience {
     @Instance(value="Madscience")
     public static Madscience instance;
     
-    @SidedProxy(clientSide = "madscience.madscience.ClientProxy", serverSide = "madscience.madscience.CommonProxy")
+    @SidedProxy(clientSide = "madscience.madscience.client.ClientProxy", serverSide = "madscience.madscience.CommonProxy")
 	public static CommonProxy proxy;
     
     @EventHandler

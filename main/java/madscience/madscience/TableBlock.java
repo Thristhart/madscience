@@ -11,5 +11,6 @@ public class TableBlock extends Block {
 		this.setStepSound(Block.soundTypeMetal);
 		this.setBlockName("madscienceTable");
 		this.setCreativeTab(CreativeTabs.tabMisc);
+		this.setHarvestLevel("pickaxe", 2); // require iron pickaxe to break effectively
 	}
 }

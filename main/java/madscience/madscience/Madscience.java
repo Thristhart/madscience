@@ -33,6 +33,7 @@ public class Madscience {
     			"x x",
     			'x', new ItemStack(Blocks.iron_block),
     			'y', new ItemStack(Blocks.redstone_block));
-    	GameRegistry.registerBlock(new TableBlock(Material.ground), "madscienceTable");
+    	GameRegistry.registerBlock(new TableBlock(Material.piston), "madscienceTable");
+    	
     }
 }

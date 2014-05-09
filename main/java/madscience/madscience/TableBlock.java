@@ -7,10 +7,11 @@ import net.minecraft.creativetab.CreativeTabs;
 public class TableBlock extends Block {
 	public TableBlock (Material material) {
 		super(material);
-		this.setHardness(0.5f);
+		this.setHardness(2f);
 		this.setStepSound(Block.soundTypeMetal);
 		this.setBlockName("madscienceTable");
 		this.setCreativeTab(CreativeTabs.tabMisc);
-		this.setHarvestLevel("pickaxe", 2); // require iron pickaxe to break effectively
+		// WONTFIX: this doesn't actually work, but that's okay fists are cool
+		setHarvestLevel("pickaxe", 2); // require iron pickaxe to break effectively
 	}
 }

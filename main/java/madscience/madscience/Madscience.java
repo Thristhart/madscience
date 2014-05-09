@@ -32,6 +32,5 @@ public class Madscience {
     			"x x",
     			'x', new ItemStack(Blocks.iron_block),
     			'y', new ItemStack(Blocks.redstone_block));
-        System.out.println("Hello World!");
     }
 }

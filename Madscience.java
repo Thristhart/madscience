@@ -1,10 +1,13 @@
 package madscience.madscience;
 
 
+import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 
@@ -23,7 +26,12 @@ public class Madscience {
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-		// some example code
+    	GameRegistry.addShapedRecipe(new ItemStack(Blocks.dirt),
+    			"xxx",
+    			"xyx",
+    			"x x",
+    			'x', new ItemStack(Blocks.iron_block),
+    			'y', new ItemStack(Blocks.redstone_block));
         System.out.println("Hello World!");
     }
 }

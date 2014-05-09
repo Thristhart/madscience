@@ -2,6 +2,7 @@ package madscience.madscience;
 
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.Mod;
@@ -32,5 +33,6 @@ public class Madscience {
     			"x x",
     			'x', new ItemStack(Blocks.iron_block),
     			'y', new ItemStack(Blocks.redstone_block));
+    	GameRegistry.registerBlock(new TableBlock(Material.ground), "madscienceTable");
     }
 }

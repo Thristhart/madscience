@@ -20,7 +20,7 @@ public class GuiHandler implements IGuiHandler {
 			int x, int y, int z) {
 		Block block = world.getBlock(x, y, z);
 		if(block instanceof TableBlock) {
-			return new TableGui();
+			return new TableGui(player);
 		}
 		return null;
 	}

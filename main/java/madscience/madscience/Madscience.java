@@ -27,13 +27,14 @@ public class Madscience {
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-    	GameRegistry.addShapedRecipe(new ItemStack(Blocks.dirt),
+    	TableBlock tableBlock = new TableBlock(Material.piston);
+    	GameRegistry.addShapedRecipe(new ItemStack(tableBlock),
     			"xxx",
     			"xyx",
     			"x x",
     			'x', new ItemStack(Blocks.iron_block),
     			'y', new ItemStack(Blocks.redstone_block));
-    	GameRegistry.registerBlock(new TableBlock(Material.piston), "madscienceTable");
+    	GameRegistry.registerBlock(tableBlock, "madscienceTable");
     	
     }
 }

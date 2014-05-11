@@ -12,19 +12,16 @@ public class GuiHandler implements IGuiHandler {
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world,
 			int x, int y, int z) {
 		Block block = world.getBlock(x, y, z);
-		return block;
+		return new TableGuiContainer();
 	}
 
 	@Override
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world,
 			int x, int y, int z) {
-		System.out.println("what about here???");
 		Block block = world.getBlock(x, y, z);
 		if(block instanceof TableBlock) {
-			System.out.println("do we get here???");
 			return new TableGui();
 		}
-		System.out.println("whyyyyyy");
 		return null;
 	}
 

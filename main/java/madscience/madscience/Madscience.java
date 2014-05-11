@@ -28,6 +28,7 @@ public class Madscience {
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
+    	Madscience.instance = this;
     	TableBlock tableBlock = new TableBlock(Material.piston);
     	GameRegistry.addShapedRecipe(new ItemStack(tableBlock),
     			"xxx",

@@ -4,6 +4,7 @@ import cpw.mods.fml.common.network.FMLOutboundHandler;
 import cpw.mods.fml.relauncher.Side;
 import madscience.madscience.ExtendedPlayer;
 import madscience.madscience.Madscience;
+import madscience.madscience.network.UpdateResearchPointsPacket;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.entity.player.EntityPlayer;
@@ -26,6 +27,11 @@ public class TableGui extends GuiScreen {
 		buttonList.add(new GuiButton(1, 0, 0, 20, 20, "-"));
 	}
 	
+	@Override
+	public boolean doesGuiPauseGame() {
+		return false;
+	}
+	
 	protected void actionPerformed(GuiButton guibutton) {
 		ExtendedPlayer extended = ExtendedPlayer.get(player);
     	int currentPoints = extended.getResearchPoints();
@@ -38,11 +44,14 @@ public class TableGui extends GuiScreen {
     		break;
     	}
     	extended.setResearchPoints(currentPoints);
+    	
+    	Madscience.channels.get(Side.CLIENT).attr(FMLOutboundHandler.FML_MESSAGETARGET).set(FMLOutboundHandler.OutboundTarget.TOSERVER);
+    	Madscience.channels.get(Side.CLIENT).writeOutbound(new UpdateResearchPointsPacket(currentPoints));
 	}
 	
 	@Override
 	public void drawScreen(int mouseX, int mouseY, float param3) {
-		this.mc.renderEngine.bindTexture(new ResourceLocation("madscience", "/textures/gui/science_table.png"));
+		this.mc.renderEngine.bindTexture(new ResourceLocation("madscience", "textures/gui/science_table.png"));
         int x = (width - GUI_WIDTH) / 2;
         int y = (height - GUI_HEIGHT) / 2;
     	this.drawTexturedModalRect(x, y, 0, 0, GUI_WIDTH, GUI_HEIGHT);

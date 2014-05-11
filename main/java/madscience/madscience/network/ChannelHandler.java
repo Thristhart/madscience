@@ -12,6 +12,7 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 public class ChannelHandler extends FMLIndexedMessageToMessageCodec<IPacket> {
 	
 	public ChannelHandler() {
+		addDiscriminator(0, UpdateResearchPointsPacket.class);
 	}
 
 	@Override

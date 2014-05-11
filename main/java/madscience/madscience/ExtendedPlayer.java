@@ -8,7 +8,7 @@ import net.minecraftforge.common.IExtendedEntityProperties;
 
 public class ExtendedPlayer implements IExtendedEntityProperties {
 
-	public final static String EXT_PROP_NAME = "ExtendedPlayer";
+	public final static String EXT_PROP_NAME = "Madscience";
 	
 	private final EntityPlayer player;
 	

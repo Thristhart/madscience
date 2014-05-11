@@ -4,7 +4,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.IIcon;
+import net.minecraft.world.World;
 
 public class TableBlock extends Block {
 	public IIcon SideIcons[];
@@ -28,7 +30,15 @@ public class TableBlock extends Block {
 		SideIcons[5] = icon.registerIcon("madscience:table_left");
 	}
 	
+	
 	public IIcon getIcon(int side, int metadata) {
 		return SideIcons[side];
+	}
+	
+	@Override
+	public boolean onBlockActivated(World world, int x, int y, int z,
+			EntityPlayer player, int metadata, float what, float these, float are) {
+		System.out.println("Player right clicked on a table! yaaay");
+		return true;
 	}
 }

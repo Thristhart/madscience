@@ -11,6 +11,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.network.NetworkRegistry;
 
 @Mod(modid = Madscience.MODID, version = Madscience.VERSION)
 
@@ -35,6 +36,6 @@ public class Madscience {
     			'x', new ItemStack(Blocks.iron_block),
     			'y', new ItemStack(Blocks.redstone_block));
     	GameRegistry.registerBlock(tableBlock, "madscienceTable");
-    	
+    	NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
     }
 }

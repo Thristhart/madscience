@@ -38,7 +38,7 @@ public class TableBlock extends Block {
 	@Override
 	public boolean onBlockActivated(World world, int x, int y, int z,
 			EntityPlayer player, int metadata, float what, float these, float are) {
-		System.out.println("Player right clicked on a table! yaaay");
+		player.openGui(Madscience.instance, 0, world, x, y, z);
 		return true;
 	}
 }
